@@ -1,7 +1,4 @@
-#include "a_star.h"
-
-#include <algorithm>
-#include <list>
+#include <merlin_a_star.hpp>
 
 namespace ores
 {
