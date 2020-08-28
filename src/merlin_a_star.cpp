@@ -1,4 +1,4 @@
-#include <Merlin-operational-research/merlin_a_star.hpp>
+#include <merlin-operational-research/merlin_a_star.hpp>
 
 namespace ores
 {
