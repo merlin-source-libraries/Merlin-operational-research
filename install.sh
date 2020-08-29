@@ -19,7 +19,7 @@ if [ $# == 1 ]; then
 		echo "[Error] Sources not found - The installation script must be called from the repository (cd to Merlin-operational-research/)."
 	fi
 	if [ -d "${repository}/src" ] && [ -f "${repository}/src/merlin_a_star.cpp" ]; then
-		g++ -shared -fPIC -Wall -Wextra -pedantic -std=c++17 "${repository}/src/merlin_a_star.cpp" -I./include/ -o libmerlin_a_star.so
+		g++ -shared -fPIC -Wall -Wextra -pedantic -std=c++17 -O3 "${repository}/src/merlin_a_star.cpp" -I./include/ -o libmerlin_a_star.so
 		mv libmerlin_a_star.so ./lib/
 	else
 		echo "[Error] Sources not found - The installation script must be called from the repository (cd to Merlin-operational-research/)."
