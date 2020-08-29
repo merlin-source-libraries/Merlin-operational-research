@@ -86,6 +86,13 @@ namespace merl
 
         return path;
     }
+    void AStar::release_path(std::list<State *> & path)
+    {
+        for(auto & s : path)
+            delete s;
+
+        path.clear();
+    }
     void AStar::insert_ordered(std::list<AStar::State *> & vec, AStar::State * s, const std::unordered_map<AStar::State *, double> & f) const
     {
         bool inserted(false);

@@ -26,6 +26,8 @@ namespace merl
             AStar(MODE mode);
             std::list<State *> launch(State * init);
 
+            static void release_path(std::list<State *> & path);
+
         private:
             MODE mode_;
 
