@@ -1,11 +1,12 @@
 #include <merlin-operational-research/merlin_a_star.hpp>
 
-namespace ores
+namespace merl
 {
     AStar::AStar(MODE mode) : mode_(mode)
     {}
-    std::list<State *> AStar::launch(State * init)
+    std::list<AStar::State *> AStar::launch(AStar::State * init)
     {
+        using State = AStar::State;
         std::list<State *> path;
         std::unordered_map<State *, State *> parents; // <State, Parent state>
         std::unordered_map<State *, double> g;        // <State, Cost/quality criterion value taken to reach this state>
@@ -85,10 +86,10 @@ namespace ores
 
         return path;
     }
-    void AStar::insert_ordered(std::list<State *> & vec, State * s, const std::unordered_map<State *, double> & f) const
+    void AStar::insert_ordered(std::list<AStar::State *> & vec, AStar::State * s, const std::unordered_map<AStar::State *, double> & f) const
     {
         bool inserted(false);
-        for(std::list<State*>::const_iterator cit = vec.cbegin(); !inserted && cit != vec.cend(); ++cit)
+        for(std::list<AStar::State*>::const_iterator cit = vec.cbegin(); !inserted && cit != vec.cend(); ++cit)
         {
             bool max_cond = (mode_ == MODE::MAXIMIZE && f.at(s) > f.at(*cit));
             bool min_cond = (mode_ == MODE::MINIMIZE && f.at(s) < f.at(*cit));

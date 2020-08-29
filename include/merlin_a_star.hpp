@@ -5,22 +5,22 @@
 #include <list>
 #include <unordered_map>
 
-namespace ores
+namespace merl
 {
-    class State
-    {
-        public:
-            virtual ~State() = default;
-            virtual bool isSolution() const = 0;
-            virtual std::list<State *> successors() const = 0;
-            virtual double h() const = 0;
-            virtual double k(const State * s) const = 0;
-            virtual bool equals(const State * s) const = 0;
-    };
-
     class AStar final
     {
         public:
+            class State
+            {
+                public:
+                    virtual ~State() = default;
+                    virtual bool isSolution() const = 0;
+                    virtual std::list<State *> successors() const = 0;
+                    virtual double h() const = 0;
+                    virtual double k(const State * s) const = 0;
+                    virtual bool equals(const State * s) const = 0;
+            };
+
             enum class MODE {MINIMIZE, MAXIMIZE};
 
             AStar(MODE mode);
