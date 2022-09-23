@@ -1,4 +1,4 @@
-#include <merlin-operational-research/merlin_a_star.hpp>
+#include <merlin_a_star.hpp>
 
 namespace merl
 {

@@ -1,0 +1,7 @@
+#ifndef MERLIN_OPERATIONAL_RESEARCH
+#define MERLIN_OPERATIONAL_RESEARCH
+
+#include <merlin_a_star.hpp>
+
+#endif
+

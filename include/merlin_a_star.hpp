@@ -1,5 +1,5 @@
-#ifndef A_STAR_H
-#define A_STAR_H
+#ifndef MERLIN_A_STAR_HPP
+#define MERLIN_A_STAR_HPP
 
 #include <algorithm>
 #include <list>
@@ -40,4 +40,4 @@ namespace merl
     };
 }
 
-#endif // A_STAR_H
+#endif // MERLIN_A_STAR_HPP
